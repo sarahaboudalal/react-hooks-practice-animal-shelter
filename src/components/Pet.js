@@ -1,19 +1,19 @@
 import React from "react";
 
-function Pet() {
+function Pet(props) {
   return (
     <div className="card" data-testid="pet">
       <div className="content">
         <span className="header">
           {/*'♀' OR '♂' */}
-          PET NAME
+          {props.name}
         </span>
         <div className="meta">
-          <span className="date">PET TYPE</span>
+          <span className="date">PET TYPE: {props.type}</span>
         </div>
         <div className="description">
-          <p>Age: PET AGE</p>
-          <p>Weight: PET WEIGHT</p>
+          <p>Age: {props.age}</p>
+          <p>Weight: {props.weight}</p>
         </div>
       </div>
       <div className="extra content">
