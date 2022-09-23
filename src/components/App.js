@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import Filters from "./Filters";
 import PetBrowser from "./PetBrowser";
@@ -32,16 +32,10 @@ function App() {
     }
   }
     
-  const onAdoptPet = async (lol) => {
-    // const response = await fetch(`http://localhost:3001/pets?id=${lol}`, { 
-    //   method: 'PATCH', 
-    //   body: JSON.stringify({isAdopted: true }), 
-    //   headers: { 'Content-type': 'application/json; charset=UTF-8', }, });
-
-    // const data = await response.json();
-    // console.log(data)
-
-    console.log(lol)
+  function onAdoptPet(id) {
+    let adoptedPet = [...pets];
+    adoptedPet.find((pet) => pet.id === id).isAdopted = true;
+    setPets(adoptedPet)
   }
 
 
